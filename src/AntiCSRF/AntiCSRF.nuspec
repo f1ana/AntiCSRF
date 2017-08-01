@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AntiCSRF</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/f1ana/AntiCSRF/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/f1ana/AntiCSRF</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple CSRF token using HMAC-SHA256</description>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>anticsrf csrf f1ana antiforgerytoken antiforgery</tags>
+  </metadata>
+</package>

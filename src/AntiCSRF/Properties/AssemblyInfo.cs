@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AntiCSRF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Christophe Flanagan")]
+[assembly: AssemblyCompany("Christopher Flanagan")]
 [assembly: AssemblyProduct("AntiCSRF")]
 [assembly: AssemblyCopyright("MIT License")]
 [assembly: AssemblyTrademark("")]
