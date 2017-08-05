@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AntiCSRF.Config;
 
 namespace AntiCSRF.Tests {
     [TestClass]

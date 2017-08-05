@@ -1,4 +1,4 @@
-﻿namespace AntiCSRF {
+﻿namespace AntiCSRF.Config {
     /// <summary>
     /// Configuration class for AntiCSRF classes
     /// </summary>
@@ -13,7 +13,7 @@
         public int expiryInSeconds = 3600;
         /// <summary>
         /// HMAC Algorithm for the token.  "HMAC" is already prefixed, the following are valid options:
-        /// SHA1, MD5, RIPEMD160, SHA256, SHA384, SHA512, TripleDES
+        /// SHA1, MD5, SHA256, SHA384, SHA512
         /// </summary>
         public string hmac_alg = "SHA256";
         /// <summary>

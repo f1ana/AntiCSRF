@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using AntiCSRF.Config;
+using AntiCSRF.Factory;
 
 namespace AntiCSRF {
     /// <summary>
@@ -34,7 +36,7 @@ namespace AntiCSRF {
             }
 
             var data = new byte[config.dataSize];
-            using (var rnd = new RNGCryptoServiceProvider()) {
+            using (var rnd = RandomNumberGenerator.Create()) {
                 rnd.GetBytes(data);
             }
 
@@ -43,7 +45,8 @@ namespace AntiCSRF {
                       userId + config.split + expires;
 
             string signature;
-            using (var hmac = HMAC.Create($"HMAC{config.hmac_alg}")) {
+
+            using (var hmac = HMACGenerator.Create(config.hmac_alg)) {
                 hmac.Key = Encoding.UTF8.GetBytes(key);
                 var braw = Encoding.UTF8.GetBytes(raw);
 
@@ -92,7 +95,7 @@ namespace AntiCSRF {
             var raw = $"{parts[0]}{config.split}{parts[1]}{config.split}{parts[2]}";
 
             string signature;
-            using (var hmac = HMAC.Create($"HMAC{config.hmac_alg}")) {
+            using (var hmac = HMACGenerator.Create(config.hmac_alg)) {
                 hmac.Key = Encoding.UTF8.GetBytes(key);
                 var braw = Encoding.UTF8.GetBytes(raw);
 
@@ -106,7 +109,7 @@ namespace AntiCSRF {
                 return false;
             }
 
-            if (!string.Equals(s1, s2, StringComparison.InvariantCulture)) {
+            if (!string.Equals(s1, s2, StringComparison.CurrentCultureIgnoreCase)) {
                 return false;
             }
             var currentTicks = Convert.ToInt64(parts[2]);

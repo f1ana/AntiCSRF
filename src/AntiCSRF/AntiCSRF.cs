@@ -1,4 +1,6 @@
-﻿namespace AntiCSRF {
+﻿using AntiCSRF.Config;
+
+namespace AntiCSRF {
     /// <summary>
     /// Class used to create AntiCSRF instances
     /// </summary>
